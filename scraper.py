@@ -14,9 +14,9 @@ def scrape_delhi_high_court(case_type, case_number, filing_year):
     url = "https://delhihighcourt.nic.in/app/get-case-type-status"
 
     # Setup WebDriver
-    service = Service(executable_path="C:/chromedriver/chromedriver.exe")  # Adjust path if needed
+    service = Service(executable_path="C:/chromedriver/chromedriver.exe")  
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')  # Optional
+    options.add_argument('--headless')  
     driver = webdriver.Chrome(service=service, options=options)
 
     try:
@@ -83,7 +83,7 @@ def scrape_delhi_high_court(case_type, case_number, filing_year):
 
             #print(f"{item['text']} → {item['link']}")
 
-        # ✅ Log to MySQL
+        # Log to MySQL
         log_to_mysql(case_type=case_type,
                      case_number=case_number,
                      filing_year=filing_year,
@@ -95,10 +95,10 @@ def scrape_delhi_high_court(case_type, case_number, filing_year):
 
 
     except Exception as e:
-        print("❌ Error occurred. Saved HTML to result.html for debugging.")
+        print(" Error occurred. Saved HTML to result.html for debugging.")
         with open("result.html", "w", encoding="utf-8") as f:
             f.write(driver.page_source)
-        raise ValueError("❗ Could not parse result. Maybe the case number is invalid or the site layout changed.") from e
+        raise ValueError(" Could not parse result. Maybe the case number is invalid or the site layout changed.") from e
 
     finally:
 
@@ -107,3 +107,4 @@ def scrape_delhi_high_court(case_type, case_number, filing_year):
 #result,pdf_links=scrape_delhi_high_court('W.P.(C)', '8531', '2022')
 #print(result)
 #print(pdf_links)
+
