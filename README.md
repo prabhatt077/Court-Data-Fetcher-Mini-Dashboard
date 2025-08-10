@@ -4,6 +4,8 @@ A lightweight Flask web app that allows users to search Delhi High Court case st
 Case Type, Case Number, and Filing Year. The app fetches metadata, displays latest case info and judgment/order PDFs (if available), and logs queries to a MySQL database.
 
 ---
+[🎥 Watch Demo Video]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/0j7WWzrmxuk))
+
 
 ## ⚖️ Court Chosen
 
